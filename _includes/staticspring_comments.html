@@ -1,9 +1,9 @@
 <h2>Comments</h2>
 <ul>
-{% for comment in site.data.comments[slug] %}
+{% for comment_map in site.data.staticspring[page.slug] %}
+  {% assign comment = comment_map[1] %}
   <li>
     {% include staticspring_comment.html %}
-  <li>
-  <hr>
+  </li>
 {% endfor %}
 </ul>
