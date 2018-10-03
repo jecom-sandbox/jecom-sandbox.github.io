@@ -1,0 +1,9 @@
+<h2>Comments</h2>
+<ul>
+{% for comment in site.data.comments[slug] %}
+  <li>
+    {% include staticspring_comment.html %}
+  <li>
+  <hr>
+{% endfor %}
+</ul>

@@ -1,2 +1,11 @@
 theme: minima
 title: A-Blog
+defaults:
+  - scope:
+      path: ""
+    values:
+      author: "Blog Author"
+gems:
+  - jekyll-feed
+staticspring:
+  comments: true
