@@ -5,7 +5,7 @@ defaults:
       path: ""
     values:
       author: "Blog Author"
-gems:
+plugins:
   - jekyll-feed
 staticspring:
   comments: true

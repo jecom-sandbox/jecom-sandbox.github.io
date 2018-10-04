@@ -1,9 +1,14 @@
 <h2>Comments</h2>
 <ul>
-{% for comment_map in site.data.staticspring[page.slug] %}
-  {% assign comment = comment_map[1] %}
-  <li>
-    {% include staticspring_comment.html %}
-  </li>
+{% for comment_val in site.data.staticspring[page.slug] %}
+  {% assign comment = comment_val[1] %}
+  {% assign curr_comment = comment_val[0] %}
+  {% if comment.parent %}
+  {%    continue %}
+  {% else %}
+    <li>
+      {% include staticspring_comment.html %}
+    </li>
+  {% endif %}
 {% endfor %}
 </ul>
