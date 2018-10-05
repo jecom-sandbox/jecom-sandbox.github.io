@@ -1,10 +1,7 @@
 <h2>Comments</h2>
 <hr>
 <br>
-<h2>{{ site.data.staticspring }}</h2>
-
 {% for comment_val in site.data.staticspring[page.slug] %}
-  <h3>here</h3>
   {% assign comment = comment_val[1] %}
   {% assign curr_comment = comment_val[0] %}
   {% if comment.parent %}
