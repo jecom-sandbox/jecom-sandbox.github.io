@@ -10,3 +10,4 @@ plugins:
 staticspring:
   comments: true
   api_token: 259yexi7l94afzj4mw1zo6tz4b3yrkps
+  comment_server: https://198.74.52.187
