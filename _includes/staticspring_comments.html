@@ -1,14 +1,19 @@
-<h2>Comments</h2>
+{% assign comments_arr = nil | compact %}
+{% for comment_val in site.data.staticspring[page.slug] %}
+  {% assign comments_arr = comments_arr | push: comment_val[1] %}
+{% endfor %}
+{% assign num_comments = comments_arr | size %}
+{% if num_comments == 1 %}
+  {% assign display_word = ' Comment' %}
+{% else %}
+  {% assign display_word = ' Comments' %}
+{% endif %}
+<h2>{{ num_comments }}{{ display_word }}</h2>
 <hr>
 <br>
-{% for comment_val in site.data.staticspring[page.slug] %}
-  {% assign comment = comment_val[1] %}
-  {% assign curr_comment = comment_val[0] %}
-  {% if comment.parent %}
-  {%    continue %}
-  {% else %}
-      {% include staticspring_comment.html %}
-      <hr>
-      <br>
-  {% endif %}
+{% assign sorted_comments_arr = comments_arr | sort: 'date' | reverse %}
+{% for comment in sorted_comments_arr %}
+  {% include staticspring_comment.html %}
+  <hr>
+  <br>
 {% endfor %}

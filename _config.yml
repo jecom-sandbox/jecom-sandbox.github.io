@@ -9,3 +9,4 @@ plugins:
   - jekyll-feed
 staticspring:
   comments: true
+  api_token: 259yexi7l94afzj4mw1zo6tz4b3yrkps
